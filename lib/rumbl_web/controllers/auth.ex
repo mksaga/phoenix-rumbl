@@ -17,4 +17,9 @@ defmodule RumblWeb.Auth do
     # protect us from fixation attacks: send session cookie to client with new identifier
     |> configure_session(renew: true)
   end
+
+  def logout(conn) do
+    configure_session(conn, drop: true)
+  end
+
 end
